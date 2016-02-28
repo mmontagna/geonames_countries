@@ -30,13 +30,19 @@ class _Countries(object):
       source = name[byIndex + len(delim):].upper()
       return lambda x: [x[target] for x in self._indices[source][x]]
 
+  def _getFirstOrNone(self, name, x):
+    try:
+      return self.findXbyY(name, 'findA', 'By')(x)[0]
+    except:
+      return None
+
   def __getattr__(self, name):
     if name.startswith('findBy'):
       prop = name[len('findBy'):].upper()
       return lambda x: self._indices[prop][x]
     if name.startswith('findA'):
       name = name
-      return lambda x: self.findXbyY(name, 'findA', 'By')(x)[0]
+      return lambda x: self._getFirstOrNone(name, x)
     if name.startswith('find'):
       return self.findXbyY(name, 'find', 'By')
     else:
