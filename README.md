@@ -1,4 +1,5 @@
-[![Circle CI](https://circleci.com/gh/mmontagna/kscrawl/tree/master.svg?style=svg)](https://circleci.com/gh/mmontagna/kscrawl/tree/master)
+[![Circle CI](https://circleci.com/gh/mmontagna/geonames_countries.svg?style=svg)](https://circleci.com/gh/mmontagna/geonames_countries)
+[![Code Climate](https://codeclimate.com/github/mmontagna/geonames_countries/badges/gpa.svg)](https://codeclimate.com/github/mmontagna/geonames_countries)
 
 #Geonames Countries
 
