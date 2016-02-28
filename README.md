@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/mmontagna/kscrawl/tree/master.svg?style=svg)](https://circleci.com/gh/mmontagna/kscrawl/tree/master)
+
 #Geonames Countries
 
 This package provides a simple wrapper around the
