@@ -3,6 +3,9 @@
 This package provides a simple wrapper around the
 country data provided by [Geonames](http://download.geonames.org/export/dump/countryInfo.txt)
 
+##How to install
+```pip install geonames_countries```
+
 ##How to use
 
 ###Finding country codes which belong to a country that uses Euros
