@@ -39,10 +39,6 @@ class _Countries(object):
       return lambda x: self.findXbyY(name, 'findA', 'By')(x)[0]
     if name.startswith('find'):
       return self.findXbyY(name, 'find', 'By')
-      # byIndex = name.index('By')
-      # target = name[len('find'):byIndex].upper()
-      # source = name[byIndex + len('By'):].upper()
-      # return lambda x: [x[target] for x in self._indices[source][x]]
     else:
       return self.name
 Countries = _Countries()
