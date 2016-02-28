@@ -8,6 +8,8 @@ class TestCountries(unittest.TestCase):
     self.assertEquals('AU', Countries.findAISOBytld('.au'))
     self.assertEquals('.au', Countries.findAtldByCountry('Australia'))
 
+    self.assertIsNone(Countries.findAtldByCountry('Freedonia'))
+
   def test_findManyProperties(self):
     countries = Countries.findISOByCurrencyCode('EUR')
     self.assertTrue('IE' in countries)
@@ -16,6 +18,7 @@ class TestCountries(unittest.TestCase):
 
     #Go on break the build ;)
     self.assertTrue('GB' in Countries.findISOByCurrencyCode('GBP'))
+    self.assertEquals([], Countries.findISOByCurrencyCode('Freedonia'))
 
   def test_findDictionaries(self):
     countries = Countries.findByCurrencyCode('EUR')
@@ -24,6 +27,7 @@ class TestCountries(unittest.TestCase):
     self.assertTrue(all([x['CURRENCYCODE'] == 'EUR' for x in countries]))
     self.assertTrue('IT' in [x['ISO'] for x in countries])
     self.assertTrue('IE' in [x['ISO'] for x in countries])
+    self.assertEquals([], Countries.findByCurrencyCode('GALLEON'))
 
 if __name__ == "__main__":
   suite = unittest.TestLoader().loadTestsFromTestCase(TestCountries)
