@@ -8,7 +8,7 @@ setup(
   author = 'Marco Montagna',
   author_email = 'marcojoemontagna@gmail.com',
   url = 'https://github.com/mmontagna/geonames_countries',
-  download_url = '',
+  download_url = 'https://github.com/mmontagna/geonames_countries/archive/v0.1.tar.gz',
   keywords = ['tld', 'country code'],
   classifiers = [],
   include_package_data=True,
