@@ -11,4 +11,5 @@ setup(
   download_url = '',
   keywords = ['tld', 'country code'],
   classifiers = [],
+  include_package_data=True
 )
