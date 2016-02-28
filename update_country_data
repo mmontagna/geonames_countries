@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+import urllib2, json, gzip
+
+geonames_country_url = 'http://download.geonames.org/export/dump/countryInfo.txt'
+
+def find_header(lines):
+  #Assume header is the commented line with the > # of tabs.
+  lines = filter(lambda line: line.startswith('#'), lines)
+  sorted_lines = sorted(lines, key=lambda x: x.split("\t"), reverse=True)
+  return sorted_lines[0].upper().strip('#').split("\t")
+response = urllib2.urlopen(geonames_country_url)
+
+response_lines = map(lambda x: x.strip(), response.read().split("\n"))
+
+content_lines = filter(lambda x: not x.startswith('#'), response_lines)
+
+num_fields = len(content_lines[0].split("\t"))
+
+packaged_data = {'version' : 0}
+packaged_data['header'] = find_header(response_lines)
+packaged_data['countries'] = []
+
+for line in content_lines:
+  packaged_data['countries'].append(line.split("\t"))
+
+with gzip.open('geonames_countries/geonames_countries.json.gz', 'w') as f:
+  json.dump(packaged_data, f)
