@@ -11,5 +11,6 @@ setup(
   download_url = '',
   keywords = ['tld', 'country code'],
   classifiers = [],
-  include_package_data=True
+  include_package_data=True,
+  package_data={'geonames_countries': ['geonames_countries.json.gz']}
 )

@@ -1,10 +1,11 @@
-import json, gzip
+import json, gzip, os
 from collections import defaultdict
 
 class _Countries(object):
 
   def __init__(self):
-    with gzip.open('geonames_countries/geonames_countries.json.gz', 'r') as f:
+    path = os.path.join(os.path.dirname(__file__), 'geonames_countries.json.gz')
+    with gzip.open(path, 'r') as f:
       self.country_data = json.load(f)
     if (self.country_data['version'] != 0):
       raise Exception('geonames_countries.Countries got unknown geonames_countries.json.gz version.')

@@ -1,1 +1,1 @@
-geonames_countries/data.json
+include ./geonames_countries/geonames_countries.json.gz
